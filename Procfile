@@ -1,2 +1,1 @@
-web: heroku-php-apache2
-release: bash release.sh
+web: chmod 0666 include/ost-config.php 2>/dev/null; heroku-php-apache2
