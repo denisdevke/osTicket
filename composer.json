@@ -1,0 +1,12 @@
+{
+    "require": {
+        "php": "^8.2",
+        "ext-mysqli": "*",
+        "ext-gd": "*",
+        "ext-imap": "*",
+        "ext-mbstring": "*",
+        "ext-intl": "*",
+        "ext-xml": "*",
+        "ext-json": "*"
+    }
+}
