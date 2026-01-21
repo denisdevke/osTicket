@@ -181,11 +181,13 @@ class Bootstrap {
             if(!strcasecmp(basename($_SERVER['SCRIPT_NAME']), 'settings.php'))
                 Http::response(500,
                     'Please rename config file include/settings.php to include/ost-config.php to continue!');
-        } elseif(file_exists(ROOT_DIR.'setup/'))
-            Http::redirect(ROOT_PATH.'setup/');
+        }
 
-        if(!$configfile || !file_exists($configfile))
+        if(!$configfile || !file_exists($configfile)) {
+            if(file_exists(ROOT_DIR.'setup/'))
+                Http::redirect(ROOT_PATH.'setup/');
             Http::response(500,'<b>Error loading settings. Contact admin.</b>');
+        }
 
         require($configfile);
         define('CONFIG_FILE',$configfile); //used in admin.php to check perm.
